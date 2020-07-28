@@ -31,6 +31,27 @@ public class Bar
 		}
 	}
 	
+	public void loschen(Getrank welches) throws BarException
+	{
+		if(welches!=null)
+		{
+			if(welches.getBar()==this)
+			{
+				getranke.remove(welches.getName());
+				welches.setBar(null);
+				
+			}
+			else
+			{
+				throw new BarException("Fehler : Getränk nicht in dieser Bar vorhanden!");
+			}
+		}
+		else
+		{
+			throw new BarException("Fehler : keine Getränk!");
+		}
+	}
+	
 	public String toString()
 	{
 		String erg;

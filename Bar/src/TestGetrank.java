@@ -1,6 +1,50 @@
 
 public class TestGetrank
 {
+	public static void testAufnehmen()
+	{
+		Bar b;
+		Alkoholfrei a0,a1,a2;
+		Alkoholisch a3,a4,a5;
+		b=new Bar();
+		
+		 try
+		{
+			a0= new Alkoholfrei("Coca cola",450,true);
+			b.aufnehmen(a0);
+			b.aufnehmen(a0);
+			
+		} 
+		 catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		 try
+		{
+			b.aufnehmen(null);
+			
+		} 
+		 catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		 try
+			{
+				
+				b.aufnehmen(new Alkoholfrei("Fanta",330,true));
+				b.aufnehmen(new Alkoholfrei("Spirit",500,true));
+				b.aufnehmen(new Alkoholisch("Bier",330,5));
+				
+			} 
+			 catch (BarException e)
+			{
+				System.out.println(e.getMessage());
+			}
+			
+		 System.out.println(b);
+	}
+	
 	public static void testAlkoholisch() 
 	{
 		Alkoholisch a0,a1,a2,a3,a4;
@@ -99,7 +143,7 @@ public class TestGetrank
  }
 	public static void main(String[] args)
 	{
-		TestGetrank.testAlkoholisch();
+		TestGetrank.testAufnehmen();
 	}
 
 }

@@ -22,6 +22,18 @@ public class Alkoholfrei extends Getrank
 	{
 		this.jugendgetrank = jugendgetrank;
 	}
+	
+	public void setMl(int ml) throws BarException
+	{
+		if((ml>=250)&&(ml<=500))
+		{
+			super.setMl(ml);
+		}
+		else
+		{
+			throw new BarException("Fehler : Alkoholgetrank müssen eine füll menge zw 250 und 500 ml aufweisen!");
+		}
+	}
 	 
 	public String toString()
 	{

@@ -30,5 +30,22 @@ public class Alkoholisch extends Getrank
 		}
 	}
 	
+	public void setMl(int ml) throws BarException
+	{
+		if((ml>=10)&&(ml<=330))
+		{
+			super.setMl(ml);
+		}
+		else
+		{
+			throw new BarException("Fehler : Alkoholische Getränke müssen eine füll menge zw 30 und 330 ml aufweisen!");
+		}
+	}
+	
+	public String toString() 
+	{
+		return super.toString()+" "+prozent+" % ";
+		
+	}
 	
 }

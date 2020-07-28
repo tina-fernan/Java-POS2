@@ -1,7 +1,60 @@
 
 public class TestGetrank
 {
- public static void testGetrank() 
+	public static void testAlkoholisch() 
+	{
+		Alkoholisch a0,a1,a2,a3,a4;
+		try
+		{
+			a0= new Alkoholisch("Bier", 330, 5);
+			System.out.println(a0);
+			
+		} 
+		catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		try
+		{
+			a1= new Alkoholisch("Alkoholfrei Bier", 330, 0);
+			System.out.println(a1);
+		} 
+		catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		try
+		{
+			a2= new Alkoholisch("obstler", 10, 40);
+			System.out.println(a2);
+		} 
+		catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		try
+		{
+			a3= new Alkoholisch("Bier", 400, 5);
+			System.out.println(a3);
+			
+		} 
+		catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		try
+		{
+			a4= new Alkoholisch("Bier", 5, 5);
+			System.out.println(a4);
+			
+		} 
+		catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+	}
+ public static void testAlkohofrei() 
  {
 	 Alkoholfrei g0,g1,g2,g3,g4;
 	 try
@@ -15,7 +68,7 @@ public class TestGetrank
 	}
 	 try
 	{
-		g1= new Alkoholfrei("Coca cola", 2, false);
+		g1= new Alkoholfrei("Coca cola", 240, false);
 		System.out.println(g1);
 	}   
 	 catch (BarException e)
@@ -24,7 +77,7 @@ public class TestGetrank
 	}
 	 try
 	{
-		g2= new Alkoholfrei("Fanta",1000 ,true);
+		g2= new Alkoholfrei("Fanta",510 ,true);
 		System.out.println(g2);
 	} 
 	 catch (BarException e)
@@ -46,7 +99,7 @@ public class TestGetrank
  }
 	public static void main(String[] args)
 	{
-		TestGetrank.testGetrank();
+		TestGetrank.testAlkoholisch();
 	}
 
 }

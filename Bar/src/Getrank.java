@@ -1,5 +1,5 @@
 
-public class Getrank
+public abstract class Getrank
 {
 	private static int lastid = 100;
 	private int id;

@@ -1,6 +1,31 @@
 
 public class TestGetrank
 {
+	public static void testLoschen2()
+	{
+		
+		Bar b;
+		b=new Bar();
+		try
+		{
+		b.aufnehmen(new Alkoholfrei("Coca Cola",330,false));
+		b.aufnehmen(new Alkoholfrei("Coca Cola Zero",400,true));
+		b.aufnehmen(new Alkoholisch("Bier",330,5));
+		b.aufnehmen(new Alkoholfrei("Coca Cola Light",450,true));
+		
+		b.aufnehmen(new Alkoholisch("Wein",330,9));
+		b.aufnehmen(new Alkoholisch("Spritze",330,4));
+		System.out.println(b);
+		System.out.println("****************************");
+		b.loschen("Coca Cola");
+		System.out.println(b);
+		}
+		catch (BarException e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public static void testLoschen1()
 	{
 		Alkoholfrei a;
@@ -169,7 +194,7 @@ public class TestGetrank
  }
 	public static void main(String[] args)
 	{
-		TestGetrank.testLoschen1();
+		TestGetrank.testLoschen2();
 	}
 
 }

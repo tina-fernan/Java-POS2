@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Bar
 {
@@ -29,6 +30,33 @@ public class Bar
 		{
 			throw new BarException("Fehler: keine Getränk!");
 		}
+	}
+	
+	public void loschen(String start) throws BarException
+	{
+		Iterator<Getrank>it;
+		Getrank g;
+		
+		if(start!=null)
+		{
+			it=getranke.values().iterator();
+			while(it.hasNext())
+			{
+				g=it.next();
+
+				if(g.getName().startsWith(start))
+				{
+					it.remove();
+					g.setBar(null);
+				}
+			}
+
+		}
+		else
+		{
+			throw new BarException("Fehler : keine Getrank Name!");
+		}
+		
 	}
 	
 	public void loschen(Getrank welches) throws BarException

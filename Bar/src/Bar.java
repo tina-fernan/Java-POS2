@@ -90,4 +90,18 @@ public class Bar
 		}
 		return erg;
 	}
+	
+	public double getMinpreice()
+	{
+		double min;
+		min=9999;
+		for(Getrank g : getranke.values())
+		{
+			if(g.getPrice()<min)
+			{
+				min=g.getPrice();
+			}
+		}
+		return min;
+	}
 }

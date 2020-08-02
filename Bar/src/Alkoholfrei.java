@@ -13,6 +13,19 @@ public class Alkoholfrei extends Getrank
 		
 	}
 
+	public double getPrice() 
+	{
+		if(jugendgetrank)
+		{
+		return 3;
+		}
+		else
+		{
+			return 5;
+		}
+		
+	}
+	
 	public boolean isJugendgetrank()
 	{
 		return jugendgetrank;
@@ -39,7 +52,7 @@ public class Alkoholfrei extends Getrank
 	{
 		if(jugendgetrank)
 		{
-			return super.toString() + "jugendgetränk";
+			return super.toString() +" jugendgetränk";
 		}
 		else
 		{

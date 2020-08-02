@@ -66,9 +66,11 @@ public abstract class Getrank
 		this.bar = bar;
 	}
 	
+	public abstract double getPrice();
+	
 	public String toString()
 	{
-		return id + " " + name + "("+ ml + " ml)";
+		return id + " " + name + "("+ ml + " ml)" +" "+ getPrice()+ " EUR ";
 	}
 	
 

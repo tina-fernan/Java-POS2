@@ -12,6 +12,12 @@ public class Alkoholisch extends Getrank
 		setProzent(prozent);
 		
 	}
+	
+	public double getPrice() 
+	{
+		return ( (double)getMl()*prozent ) /400;
+		
+	}
 
 	public int getProzent()
 	{

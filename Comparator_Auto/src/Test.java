@@ -9,10 +9,10 @@ public class Test
 		try
 		{
 			p = new Parkplatz();
-			a0 = new Auto("WN-1234A", 1999, true);
+			a0 = new Auto("WN-1234A", 1998, true);
 			a1 = new Auto("BN-2345A", 2001, true);
 			m0 = new Motorrad("WN-6765R", 2009, 100);
-			m1 = new Motorrad("ZE-4324R", 2003, 100);
+			m1 = new Motorrad("ZE-4324R", 2000, 100);
 			p.einparken(a0);
 			p.einparken(m0);
 			p.einparken(a1);

@@ -30,7 +30,7 @@ public class TestFirma
 			firma.aufnehmen(new Angestellter("Maria", 1990, 'f', 2001, 2900));
 			System.out.println(firma);
 			System.out.println("===========================");
-			firma.exportMitarbeiter("/home/thomas/Desktop/Code_2019/4akif/13_TextFiles/mitarbeiter_export.txt");
+			firma.exportMitarbeiter("C:\\Users\\tinas\\Documents\\Mitarbeiter_export.txt");
 			firma.exportMitarbeiter(null);
 			firma.exportMitarbeiter("/gibtsjanicht/mitarbeiter.ser");
 		}
@@ -48,10 +48,10 @@ public class TestFirma
 		try
 		{
 			firma = new Firma("Hugo Import Export!");
-			firma.importMitarbeiter("/home/thomas/Desktop/Code_2019/4akif/13_TextFiles/mitarbeiter.txt");
+			firma.importMitarbeiter("C:\\Users\\tinas\\Documents\\Mitarbeiter.txt");
 			System.out.println(firma);
 			
-			firma.importMitarbeiter("/home/thomas/gibtesnicht/mitarbeiter.txt");
+			firma.importMitarbeiter("C:\\Users\\tinas\\Mitarbeiter.txt");
 			firma.importMitarbeiter(null);
 		}
 		catch (MitarbeiterException e)
@@ -68,11 +68,11 @@ public class TestFirma
 		try
 		{
 			firma = new Firma("Hugo Import Export!");
-			firma.loadMitarbeiter("/home/thomas/Desktop/Code_2019/4akif/13_TextFiles/mitarbeiter.ser");
+			firma.loadMitarbeiter("C:\\Users\\tinas\\Documents\\Mitarbeiter.ser");
 			System.out.println(firma);
 			System.out.println("===========================");
 			firma.loadMitarbeiter(null);			
-			firma.loadMitarbeiter("/gibtsjanicht/mitarbeiter.ser");
+			firma.loadMitarbeiter("/gibtsJanicht/mitarbeiter.ser");
 		}
 		catch (MitarbeiterException e)
 		{
@@ -101,9 +101,9 @@ public class TestFirma
 			firma.aufnehmen(new Angestellter("Maria", 1990, 'f', 2001, 2900));
 			System.out.println(firma);
 			System.out.println("===========================");
-			firma.saveMitarbeiter("/home/thomas/Desktop/Code_2019/4akif/13_TextFiles/mitarbeiter.ser");
+			firma.saveMitarbeiter("C:\\Users\\tinas\\Documents\\Mitarbeiter.ser");
 			firma.saveMitarbeiter(null);
-			firma.saveMitarbeiter("/gibtsjanicht/mitarbeiter.ser");
+			firma.saveMitarbeiter("/gibttsjanicht/mitarbeiter.ser");
 		}
 		catch (MitarbeiterException e)
 		{

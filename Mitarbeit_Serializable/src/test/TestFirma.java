@@ -6,7 +6,7 @@ public class TestFirma
 {
 	public static void main(String[] args)
 	{
-		testExportMitarbeiter();
+		testLoadMitarbeiter();
 	}
 
 	public static void testExportMitarbeiter()
@@ -68,7 +68,7 @@ public class TestFirma
 		try
 		{
 			firma = new Firma("Hugo Import Export!");
-			firma.loadMitarbeiter("C:\\Users\\tinas\\Documents\\Mitarbeiter.ser");
+			firma.loadMitarbeiter("C:\\Users\\tinas\\Documents\\mitarbeiter.ser");
 			System.out.println(firma);
 			System.out.println("===========================");
 			firma.loadMitarbeiter(null);			
@@ -101,7 +101,7 @@ public class TestFirma
 			firma.aufnehmen(new Angestellter("Maria", 1990, 'f', 2001, 2900));
 			System.out.println(firma);
 			System.out.println("===========================");
-			firma.saveMitarbeiter("C:\\Users\\tinas\\Documents\\Mitarbeiter.ser");
+			firma.saveMitarbeiter("C:\\Users\\tinas\\Documents\\mitarbeiter.ser");
 			firma.saveMitarbeiter(null);
 			firma.saveMitarbeiter("/gibttsjanicht/mitarbeiter.ser");
 		}

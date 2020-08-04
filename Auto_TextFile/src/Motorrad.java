@@ -9,6 +9,27 @@ public class Motorrad extends Fahrzeug
         setPs(ps);
     }
 
+    public Motorrad(String zeile) throws AutoException
+    {
+    	super(zeile);
+    	
+    	try {
+    		String[] eigenschaften=zeile.split(";");
+    		//  0        1      2   3
+    		//Motorrad;WN-345V;2001;50
+    		setPs(Integer.parseInt( eigenschaften[3].trim() ));
+    	    }
+    	catch(ArrayIndexOutOfBoundsException e)
+    	  {
+    		throw new AutoException("Fehler : ungültiges format");
+    	  }
+    	catch(NumberFormatException e)
+		{
+
+			throw new AutoException("Fehler : ungültiges PS!");
+		}
+    	
+    }
     
 	public int getPs()
 	{

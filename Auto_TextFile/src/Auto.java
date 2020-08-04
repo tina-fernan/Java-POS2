@@ -8,11 +8,11 @@ public class Auto extends Fahrzeug
         setAutomatik(automatik);
     }
 
-    public Auto(String kennzeichen) throws AutoException
+   /* public Auto(String kennzeichen) throws AutoException
     {
     	super(kennzeichen, 2007);
         setAutomatik(false);
-    }
+    }*/
 
     public Auto(String kennzeichen, boolean automatik) throws AutoException
     {
@@ -26,6 +26,30 @@ public class Auto extends Fahrzeug
         setAutomatik(false);        
     }
 
+    public Auto(String zeile) throws AutoException
+    {
+    	super(zeile);
+    	
+    	try
+    	{
+    		String[] eigenschaften=zeile.split(";");
+    		// 0       1       2     3
+    		//Auto ; W-123A ; 1999 ; A
+    		//setAutomatik(eigenschaften[3].startsWith("A"));
+    		if(eigenschaften[3].startsWith("A"))
+    		{
+    			setAutomatik(true);
+    		}
+    		else
+    		{
+    			setAutomatik(false);
+    		}
+    	}
+    	catch(ArrayIndexOutOfBoundsException e)
+    	{
+    		throw new AutoException("Fehler : ungültiges format");
+    	}
+    }
     
     public boolean getAutomatik()
     {

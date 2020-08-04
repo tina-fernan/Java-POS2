@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class Parkplatz
@@ -9,6 +13,34 @@ public class Parkplatz
         Auto a;
 
         platze = new ArrayList<Fahrzeug>();
+    }
+    
+    public void importParkplatz(String fileName) throws AutoException
+    {
+		try
+		{
+			String zeile;
+			FileReader fr = new FileReader(fileName);
+			
+			BufferedReader br= new BufferedReader(fr);
+			
+			zeile=br.readLine();
+			
+			while (zeile != null)
+			{
+				zeile=br.readLine();
+			}
+			br.close();
+			fr.close();
+		} 
+		catch (FileNotFoundException e)
+		{
+			throw new AutoException("Fehler : Datei nicht gefunden!");
+		}
+		catch(IOException e)
+		{
+			throw new AutoException("Fehler : Datei nicht gelesen werden!");
+		}
     }
     
     public void sortBaujahr()

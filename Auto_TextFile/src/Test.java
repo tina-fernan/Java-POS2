@@ -1,5 +1,44 @@
 public class Test
 {
+	public static void testSplit()
+	{
+		try
+		{
+			Auto a1,a2;
+			Motorrad m1;
+			a1=new Auto("Auto;W-123A;1999;A");
+			a2=new Auto("Auto;BN-456W;1999;S");
+			m1=new Motorrad("Motorrad;WN-345V;2001;50");
+			System.out.println(a1);
+			System.out.println(a2);
+			System.out.println(m1);
+		} 
+		catch (AutoException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		try
+		{
+			Auto a;
+			a=new Auto("Auto;W-123A;1999");
+			System.out.println(a);
+		}
+		catch (AutoException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		try
+		{
+			Auto a;
+			a=new Auto("Auto;W-123A;HANS;A");
+			System.out.println(a);
+		}
+		catch (AutoException e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public static void testSortBaujahr()
 	{
 		Parkplatz p;
@@ -342,7 +381,7 @@ public class Test
 	
     public static void main(String[] args)
     {
-    	Test.testSortBaujahr();
+    	Test.testSplit();
     }
 }
 

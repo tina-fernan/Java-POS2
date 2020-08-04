@@ -24,6 +24,8 @@ public abstract class Fahrzeug implements Comparable<Fahrzeug>
 	
 	public Fahrzeug(String zeile) throws AutoException
 	{
+		try
+		{
 		String[] eigenschaften;
     	setAutoId();
     	// 0       1       2     3
@@ -31,6 +33,17 @@ public abstract class Fahrzeug implements Comparable<Fahrzeug>
     	eigenschaften= zeile.split(";");
     	setKennzeichen(eigenschaften[1].trim());
     	setBaujahr(Integer.parseInt(eigenschaften[2].trim()));
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			throw new AutoException("Fehler : ungültiges format");
+		}
+		catch(NumberFormatException e)
+		{
+
+			throw new AutoException("Fehler : ungültiges BauJahr!");
+		}
+		
         
 	}
 

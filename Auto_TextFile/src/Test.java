@@ -1,5 +1,21 @@
 public class Test
 {
+	public static void testImportParkplatz()
+	{
+		try
+		{
+			Parkplatz p=new Parkplatz();
+			p.importParkplatz("C:\\Users\\tinas\\Documents\\Autos.txt");
+			System.out.println(p);
+		} 
+		catch (AutoException e)
+		{
+			System.out.println(e.getMessage());
+			
+		}
+	}
+	
+	
 	public static void testSplit()
 	{
 		try
@@ -381,7 +397,7 @@ public class Test
 	
     public static void main(String[] args)
     {
-    	Test.testSplit();
+    	Test.testImportParkplatz();
     }
 }
 

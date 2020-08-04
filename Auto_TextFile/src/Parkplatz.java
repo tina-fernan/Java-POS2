@@ -28,6 +28,23 @@ public class Parkplatz
 			
 			while (zeile != null)
 			{
+				if(zeile.startsWith("Auto"))
+				{
+					einparken(new Auto(zeile));
+				}
+				else
+				{
+					if(zeile.startsWith("Motorrad"))
+					{
+						einparken(new Motorrad(zeile));
+					}
+					else
+					{
+
+						throw new AutoException("Fehler : ungültige object in der Datei!");
+					}
+					
+				}
 				zeile=br.readLine();
 			}
 			br.close();
@@ -86,7 +103,7 @@ public class Parkplatz
     {
         if (neu != null)
         {
-            if (platze.size() < 5)
+            if (platze.size() < 15)
             {
             	if (neu.getParkplatz() == null)
             	{

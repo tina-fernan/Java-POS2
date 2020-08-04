@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -14,6 +16,28 @@ public class Parkplatz
 
         platze = new ArrayList<Fahrzeug>();
     }
+    
+    public void exportParkplatz(String fileName)throws AutoException
+    {
+    	try
+    	{
+    		FileWriter fw=new FileWriter(fileName);
+    		BufferedWriter bw= new BufferedWriter(fw);
+    		bw.write(toStringCSV());
+    		bw.close();
+    		fw.close();
+    		
+    	}
+    	catch (FileNotFoundException e)
+		{
+			throw new AutoException("Fehler : Datei nicht gefunden!");
+		}
+		catch(IOException e)
+		{
+			throw new AutoException("Fehler : Datei nicht gelesen werden!");
+		}
+    }
+    
     
     public void importParkplatz(String fileName) throws AutoException
     {
@@ -124,6 +148,17 @@ public class Parkplatz
         {
         	throw new AutoException("Fehler: kein Auto!");
         }
+    }
+    public String toStringCSV()
+    {
+        String erg;
+
+        erg = "";
+        for (Fahrzeug a: platze)
+        {
+            erg = erg + a.toStringCSV() + "\n";
+        }
+        return erg;
     }
 
     public String toString()

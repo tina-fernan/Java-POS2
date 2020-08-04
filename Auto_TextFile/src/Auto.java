@@ -61,6 +61,21 @@ public class Auto extends Fahrzeug
         this.automatik = automatik;
     }
     
+    public String toStringCSV()
+    {
+    	if(automatik)
+    	{
+    	return "Auto" + super.toStringCSV()+" ;A";
+    	}
+    	else
+    	{
+    		return "Auto" + super.toStringCSV()+" ;S";
+    	}
+    	
+    	
+    }
+    
+    
     public String toString()
     {
         if (automatik == true)

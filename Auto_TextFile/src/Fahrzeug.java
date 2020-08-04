@@ -142,6 +142,12 @@ public abstract class Fahrzeug implements Comparable<Fahrzeug>
         this.parkplatz = parkplatz;
     }
 
+    public String toStringCSV()
+    {
+    	return ";" + kennzeichen + ";" + baujahr; 
+    	
+    }
+    
     public String toString()
     {
     	return autoId + ": " + kennzeichen + " - " + baujahr;

@@ -1,5 +1,22 @@
 public class Test
 {
+	public static void testExportParkplatz()
+	{
+		try
+		{
+			Parkplatz p=new Parkplatz();
+			p.importParkplatz("C:\\Users\\tinas\\Documents\\Autos.txt");
+			p.einparken(new Auto("I-4534H", true));
+			System.out.println(p);
+			p.exportParkplatz("C:\\Users\\tinas\\Documents\\Autos2.txt");
+		} 
+		catch (AutoException e)
+		{
+			System.out.println(e.getMessage());
+			
+		}
+	}
+	
 	public static void testImportParkplatz()
 	{
 		try
@@ -397,7 +414,7 @@ public class Test
 	
     public static void main(String[] args)
     {
-    	Test.testImportParkplatz();
+    	Test.testExportParkplatz();
     }
 }
 

@@ -47,6 +47,15 @@ public class Motorrad extends Fahrzeug
 			throw new AutoException("Fehler: zu wenig ps.");
 		}
 	}
+	
+	
+	public String toStringCSV()
+	{
+
+		return "Motorrad" + super.toStringCSV()+";" + ps;
+
+	}
+	
 
 	public String toString()
 	{
